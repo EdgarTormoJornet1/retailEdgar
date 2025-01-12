@@ -1,0 +1,17 @@
+#titolInici {
+    color: rgb(75, 75, 255);
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+#paragrafInici {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin: 20px;
+}
+
+.imatgeInici {
+    margin: auto;
+    max-width: 60%;
+    border-radius: 10px;
+}

@@ -14,7 +14,6 @@ class SeccioController extends AbstractController {
             "nom" => "Roba",
             "cicle" => "Comerç i Màrqueting",
             "curs" => "2n DAW",
-            "nomImg" => "ropa.jpg",
             "membres" => ["Anna", "Marc", "Laura", "Joan"]
         ],
         [
@@ -22,7 +21,6 @@ class SeccioController extends AbstractController {
             "nom" => "Joguines",
             "cicle" => "Disseny i Producció",
             "curs" => "1r DAM",
-            "nomImg" => "juegos.jpg",
             "membres" => ["Carla", "Pere", "Maria", "Jordi"]
         ],
         [
@@ -30,7 +28,6 @@ class SeccioController extends AbstractController {
             "nom" => "Esports",
             "cicle" => "Activitats Físiques i Esportives",
             "curs" => "1r DAW",
-            "nomImg" => "esports.avif",
             "membres" => ["Sara", "David", "Clara", "Toni"]
         ],
         [
@@ -38,7 +35,6 @@ class SeccioController extends AbstractController {
             "nom" => "Bellesa",
             "cicle" => "Imatge Personal",
             "curs" => "2n DAM",
-            "nomImg" => "bellesa.avif",
             "membres" => ["Marta", "Àlex", "Júlia", "Víctor"]
         ]
     ];    
@@ -54,10 +50,6 @@ class SeccioController extends AbstractController {
         if (!empty($resultat)) {
             $seccio = array_values($resultat)[0];
             
-            return $this->render('seccio/dades_seccio.html.twig', [
-                'seccio' => $seccio
-            ]);
-          /*  
             $dadesSeccio = "
             <h1>Dades de la Secció</h1>
             <ul>
@@ -71,13 +63,12 @@ class SeccioController extends AbstractController {
                     </ul>
                 </li>
             </ul>
-        "; */
+        ";
 
+            return new Response($dadesSeccio);
         }
 
-        return $this->render('seccio/error_seccio.html.twig', [
-            'codi' => $codi
-        ]);
+        return new Response("No s’ha trobat la secció: $codi");
     }
 }
 ?>

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dades de la Secció{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('/assets/css/estilsSeccio.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    <section>
+        <h1 id="titolSeccio">Dades Secció {{ seccio.codi }}</h1>
+
+        <img src="{{ asset('assets/img/seccions/' ~ seccio.nomImg ~ ' ') }}" alt="Imatge de la secció" class="imatgeSeccio">
+
+        <p class="paragrafSeccio">Cicle: {{ seccio.cicle }}</p>
+        <p class="paragrafSeccio">Curs: {{ seccio.curs }}</p>
+
+        <h2>Membres de l'equip:</h2>
+        <ul>
+            {% for membre in seccio.membres %}
+                <li>{{ membre }}</li>
+            {% endfor %}
+        </ul>
+
+    </section>
+    <a href="{{ path('inici') }}" class="btn-volver">Tornar a l'inici</a>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inici{% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link href="{{ asset('assets/css/estilsInici.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+<section>
+    <h2 id="titolInici">Inici programa gestió del projecte 2n DAW</h2>
+    <p id="paragrafInici">IES Lluís Simarro</p>
+    <a href="{{ path('dades_seccio', {'codi': 1}) }}"> <!-- El valor '1' es un ejemplo, puedes cambiarlo o hacerlo dinámico -->
+    <img src="{{ asset('assets/img/inici/inici.png') }}" alt="Imatge d'inici" class="imatgeInici">
+</a>
+    
+</section>
+{% endblock %}
