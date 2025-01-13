@@ -63,8 +63,8 @@
 
       <nav id="navbar" class="nav-menu navbar">
         <ul>
-          <li><a href="{{ path('inici')}}" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Inici</span></a></li>
-          <li><a href="{{ path('seccions')}}" class="nav-link scrollto"><i class="bx bx-user"></i> <span>Seccions</span></a></li>
+          <li><a href="{{ path('inici')}}" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Inici</span></a></li>
+          <li><a href="{{ path('seccions')}}" class="nav-link scrollto active"><i class="bx bx-user"></i> <span>Seccions</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
           <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
           <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
@@ -74,21 +74,15 @@
     </div>
   </header><!-- End Header -->
 
-
+<!---
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
-    <div class="hero-container text-center" data-aos="fade-in">
-        <h1>Gestió Retail Edgar</h1>
-        <p>Benvingut a la pàgina web de gestió de retail</p>
-        <p>
-          Secció de <span class="typed" data-typed-items="Roba, Joguines, Esports, Bellesa"></span>
-        </p>
+    <div class="hero-container" data-aos="fade-in">
+      <h1>Alex Smith</h1>
+      <p>I'm <span class="typed" data-typed-items="Designer, Developer, Freelancer, Photographer"></span></p>
     </div>
-</section>
-
+  </section>
 
   <main id="main">
-
-  <!--
 
     <section id="about" class="about">
       <div class="container">
@@ -138,6 +132,45 @@
 
 -->
 
+    <!-- ======= Facts Section ======= -->
+    <section id="facts" class="facts">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Seccions</h2>
+            <p>Descobrix les nostres seccions especialment dissenyades per a oferir-te contingut únic i adaptat als teus interessos. Explora cadascuna per a trobar exactament el que busques.</p>
+        </div>
+
+        <div class="row no-gutters">
+            {% for seccio in seccions %}
+                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="{{ loop.index0 * 100 }}">
+                    <a href="{{ path('dades_seccio', {'codi': seccio.codi}) }}">
+                        <div class="count-box">
+                            <img src="{{ asset('assets/img/seccions/' ~ seccio.nomImg ~ ' ') }}" alt="{{ seccio.nom }}" class="img-fluid" style="max-width: 100%; height: auto; margin-bottom: 15px;">
+                            <span class="title">{{ seccio.nom }}</span>
+                            <p><strong>{{ seccio.cicle }}</strong></p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+
+<style>
+        .count-box {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Efecto de sombra */
+            border-radius: 8px; /* Opcional, para bordes redondeados */
+            transition: box-shadow 0.3s ease; /* Suaviza el efecto al pasar el ratón */
+        }
+
+        .count-box:hover {
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el ratón */
+        }
+</style>
+<!--
 
     <section id="facts" class="facts">
       <div class="container">
@@ -198,6 +231,7 @@
       </div>
     </section>
 
+-->
     <!--
 
    
