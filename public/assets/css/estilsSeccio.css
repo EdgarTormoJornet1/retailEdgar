@@ -1,79 +1,81 @@
-#titolSeccio {
-    color: darkblue;
-    font-size: 3rem;
-    text-align: center;
+body {
     font-family: 'Arial', sans-serif;
-    margin-top: -50px;
-    padding: 10px;
-    background-color: #ecf0f1;
-    border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
 }
 
-.paragrafSeccio {
-    font-size: 1.25rem;
-    text-align: justify;
-    margin: 20px;
-    color: darkblue;
-    line-height: 1.8;
-    font-family: 'Roboto', sans-serif;
+.seccio-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #ffffff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+    color: #333;
+}
+
+#titolSeccio {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.imatge-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
 .imatgeSeccio {
-    width: 70%;
-    max-width: 400px;
-    margin: 20px auto;
-    display: block;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease-in-out;
+    max-width: 40%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.imatgeSeccio:hover {
-    transform: scale(1.05);
+.dades-seccio {
+    margin-bottom: 1.5rem;
 }
 
-ul {
+.dades-seccio p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: #34495e;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ecf0f1;
+    padding-bottom: 0.5rem;
+}
+
+.llista-membres {
     list-style-type: none;
-    margin: 20px;
     padding: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
 }
 
-ul li {
-    font-size: 1.15rem;
-    margin-bottom: 15px;
-    background-color: #f5f5f5;
-    padding: 10px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease-in-out;
+.llista-membres li {
+    background: #ecf0f1;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-ul li:hover {
-    background-color: #bdc3c7;
-    cursor: pointer;
-}
-
 
 .btn-volver {
-    padding: 12px 25px;
-    background-color: #2ecc71;
-    color: white;
-    font-size: 1.1rem;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
     font-weight: bold;
-    border-radius: 25px;
+    margin-top: 2rem;
+    transition: background-color 0.3s ease;
 }
 
 .btn-volver:hover {
-    background-color: #27ae60;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
-    color: white;
-    transform: translateY(-2px); 
-}
-
-.btn-volver:active {
-    background-color: #1e8449; 
-    transform: translateY(1px); 
+    background-color: #2980b9;
 }

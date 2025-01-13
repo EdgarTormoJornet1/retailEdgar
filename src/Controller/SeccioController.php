@@ -4,45 +4,15 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Service\ServeiDadesSeccio;
 
 class SeccioController extends AbstractController {
 
-
-    private array $seccions = [
-        [
-            "codi" => "1",
-            "nom" => "Roba",
-            "cicle" => "Comerç i Màrqueting",
-            "curs" => "2n DAW",
-            "nomImg" => "ropa.jpg",
-            "membres" => ["Anna", "Marc", "Laura", "Joan"]
-        ],
-        [
-            "codi" => "2",
-            "nom" => "Joguines",
-            "cicle" => "Disseny i Producció",
-            "curs" => "1r DAM",
-            "nomImg" => "juegos.jpg",
-            "membres" => ["Carla", "Pere", "Maria", "Jordi"]
-        ],
-        [
-            "codi" => "3",
-            "nom" => "Esports",
-            "cicle" => "Activitats Físiques i Esportives",
-            "curs" => "1r DAW",
-            "nomImg" => "esports.avif",
-            "membres" => ["Sara", "David", "Clara", "Toni"]
-        ],
-        [
-            "codi" => "4",
-            "nom" => "Bellesa",
-            "cicle" => "Imatge Personal",
-            "curs" => "2n DAM",
-            "nomImg" => "bellesa.avif",
-            "membres" => ["Marta", "Àlex", "Júlia", "Víctor"]
-        ]
-    ];    
-
+    private $seccions;
+    public function __construct(ServeiDadesSeccio $dadesSeccions) {
+        $this->seccions = $dadesSeccions->get();
+    }
+    
 
     #[Route('/seccio/{codi}', name:'dades_seccio')]
     public function seccio($codi) {

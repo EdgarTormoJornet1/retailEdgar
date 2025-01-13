@@ -8,21 +8,26 @@
 {% endblock %}
 
 {% block body %}
-    <section>
-        <h1 id="titolSeccio">Dades Secció {{ seccio.codi }}</h1>
+<section class="seccio-container">
+    <h1 id="titolSeccio">Dades Secció {{ seccio.codi }}</h1>
 
+    <div class="imatge-container">
         <img src="{{ asset('assets/img/seccions/' ~ seccio.nomImg ~ ' ') }}" alt="Imatge de la secció" class="imatgeSeccio">
+    </div>
 
-        <p class="paragrafSeccio">Cicle: {{ seccio.cicle }}</p>
-        <p class="paragrafSeccio">Curs: {{ seccio.curs }}</p>
+    <div class="dades-seccio">
+        <p><strong>Nom:</strong> {{ seccio.nom }}</p>
+        <p><strong>Cicle:</strong> {{ seccio.cicle }}</p>
+        <p><strong>Curs:</strong> {{ seccio.curs }}</p>
+    </div>
 
-        <h2>Membres de l'equip:</h2>
-        <ul>
-            {% for membre in seccio.membres %}
-                <li>{{ membre }}</li>
-            {% endfor %}
-        </ul>
+    <h2>Membres de l'equip</h2>
+    <ul class="llista-membres">
+        {% for membre in seccio.membres %}
+            <li>{{ membre }}</li>
+        {% endfor %}
+    </ul>
 
-    </section>
     <a href="{{ path('inici') }}" class="btn-volver">Tornar a l'inici</a>
+</section>
 {% endblock %}
